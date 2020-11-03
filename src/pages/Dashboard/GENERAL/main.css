@@ -1,0 +1,17 @@
+main{
+  float: 1;
+}
+
+main ul{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+  list-style: none;
+}
+
+@media(max-width: 650px){
+  main ul{
+    align-items: center;
+    grid-template-columns: 1fr;
+  }
+}

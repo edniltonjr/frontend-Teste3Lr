@@ -1,0 +1,171 @@
+
+#page-search-func {
+  width: 100%;
+  max-width: 1100px;
+
+  margin: 0 auto;
+}
+
+#page-search-func header {
+  margin-top: 48px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#page-search-func header a {
+  color: var(--title-color);
+  font-weight: bold;
+  text-decoration: none;
+
+  display: flex;
+  align-items: center;
+}
+
+#page-search-func header a svg {
+  margin-right: 16px;
+  color: var(--primary-color);
+}
+
+#page-search-func form {
+  margin: 80px auto;
+  padding: 64px;
+  max-width: 1100px;
+  background: #FFF;
+  border-radius: 8px;
+  box-shadow:0 0 5px #333;
+  display: flex;
+  flex-direction: column;
+}
+
+#page-search-func form h1 {
+  font-size: 36px;
+}
+
+#page-search-func form fieldset {
+  margin-top: 64px;
+  min-inline-size: auto;
+  border: 0;
+}
+
+#page-search-func form legend {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+#page-search-func form legend h2 {
+  font-size: 24px;
+}
+
+#page-search-func form legend span {
+  font-size: 14px;
+  font-weight: normal;
+  color: var(--text-color);
+}
+
+#page-search-func form .field-group {
+  flex: 1;
+  display: flex;
+}
+
+#page-search-func form .field {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+}
+
+#page-search-func form .field input[type=text],
+#page-search-func form .field input[type=email],
+#page-search-func form .field input[type=number],
+#page-search-func from .field input[type=search-func] {
+  flex: 1;
+  background: #F0F0F5;
+  border-radius: 8px;
+  border: 0;
+  padding: 16px 24px;
+  font-size: 16px;
+  color: #6C6C80;
+  height: 42px;
+}
+
+/* #page-search-func form .field select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  flex: 1;
+  background: #F0F0F5;
+  border-radius: 8px;
+  border: 0;
+  padding: 16px 24px;
+  font-size: 16px;
+  color: #6C6C80;
+} */
+
+#page-search-func form .field input::placeholder {
+  color: #A0A0B2;
+}
+
+#page-search-func form .field label {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+#page-search-func form .field :disabled {
+  cursor: not-allowed;
+}
+
+#page-search-func form .field-group .field + .field {
+  margin-left: 24px;
+}
+
+#page-search-func form .field-group input + input {
+  margin-left: 24px;
+}
+
+#page-search-func form .field-check {
+  flex-direction: row;
+  align-items: center;
+}
+
+#page-search-func form .field-check input[type=checkbox] {
+  background: #F0F0F5;
+}
+
+#page-search-func form .field-check label {
+  margin: 0 0 0 8px;
+}
+
+#page-search-func form button {
+
+
+}
+
+#page-search-func form button:hover {
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  box-shadow:0 0 2px #333;
+}
+
+td, th {
+  border: 1px solid #f0f0f5;
+  text-align: center;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: rgb(177, 218, 245)  ;
+}
+
+#page-search-func form a {
+  color: #000
+}

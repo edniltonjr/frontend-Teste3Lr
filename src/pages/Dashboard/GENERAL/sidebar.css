@@ -1,0 +1,105 @@
+aside{
+  width: 300px;
+  background: #FFF;
+  border-radius: 4px;
+  padding: 30px 20px;
+  box-shadow:0 0 5px #333;
+}
+
+aside strong{
+  font-size: 20px;
+  text-align: center;
+  display: block;
+  color: #333;
+}
+
+aside form{
+  margin-top: 30px;
+  align-items: center;
+  justify-content: center;
+
+}
+
+aside form .button-block + .button-block {
+  margin-top: 20px;
+}
+
+aside form .button-group {
+  margin-top: 20px;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr 1fr;
+}
+
+aside form .button-block label{
+  color: #ACACAC;
+  font-size: 16px;
+  font-weight: bold;
+  display: block;
+  font-size: 20px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+
+}
+
+aside form .button-block img{
+  display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+aside form .button-group .button-block{
+  margin-top: 0;
+}
+
+aside form .button-block input{
+  width: 100%;
+  height: 32px;
+  font-size: 14px;
+  color: #666;
+  border: 0;
+  border-bottom: 1px solid #eee;
+}
+aside form .button-block a{
+margin-top: 15px;
+display: flex;
+text-align: center;
+justify-content: center;
+align-items: center;
+background-color: #0099ff;
+width: 260px;
+height: 56px;
+border: 0;
+border-radius: 4px;
+font-weight: bold;
+transition: background 0.2s;
+}
+aside form .button-block a:hover{
+  background: #e02041;
+  }
+
+aside form .button-block a{
+  text-decoration: none;
+  color: #FFF;
+  font-size: 14px;
+  width: 100%;
+}
+
+aside form .button-block img {
+align-self: center;
+justify-content: center;
+align-items: center;
+}
+
+
+aside form .button-block .info-user{
+  margin-top: 10px;
+}
+
+aside form .button-block .info-user label{
+  font-size: 16px;
+}
+
+
