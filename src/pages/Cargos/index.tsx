@@ -21,7 +21,10 @@ import { ApplicationState } from '../../store';
 import * as CargosActions from '../../store/ducks/cargos/actions';
 
 interface StateProps {
-  cargos: Cargo[];
+  readonly cargos: Cargo[];
+  readonly success: boolean;
+  readonly loading: boolean;
+  readonly error: boolean;
 }
 
 interface DispatchProps {
@@ -38,15 +41,11 @@ type Props = StateProps & DispatchProps;
 class CargosList extends Component<Props & RouteProps, IMyComponentState> {
   constructor(props: any) {
     super(props);
+    const { loadRequest } = this.props;
+    loadRequest();
     this.state = {
       descricao: '' as string,
     };
-  }
-
-  componentDidMount() {
-    const { loadRequest } = this.props;
-
-    loadRequest();
   }
 
   render() {
@@ -100,26 +99,27 @@ class CargosList extends Component<Props & RouteProps, IMyComponentState> {
                 </tr>
               </thead>
               <tbody>
-                {cargos.map((resp: Cargo) => (
-                  <tr>
-                    <>
-                      <td>{resp.cargo}</td>
-                    </>
-                    <td>
-                      <Link
-                        to="/"
-                        title="Editar Cargo"
-                        style={{
-                          marginRight: '2px',
-                        }}
-                      >
-                        <span>
-                          <BiEdit />
-                        </span>
-                      </Link>
-                    </td>
-                  </tr>
-                ))}
+                {console.log('CARGOS', cargos)}
+                {cargos === undefined
+                  ? 'sem dados'
+                  : cargos.map((resp: any) => (
+                    <tr key={resp.id}>
+                        <td>{resp.cargo}</td>
+                        <td>
+                        <Link
+                            to="/"
+                            title="Editar Cargo"
+                            style={{
+                              marginRight: '2px',
+                            }}
+                          >
+                            <span>
+                            <BiEdit />
+                          </span>
+                          </Link>
+                      </td>
+                      </tr>
+                    ))}
               </tbody>
             </table>
           </div>
@@ -131,6 +131,9 @@ class CargosList extends Component<Props & RouteProps, IMyComponentState> {
 
 const mapStateToProps = (state: ApplicationState) => ({
   cargos: state.cargos.data,
+  success: state.cargos.success,
+  loading: state.cargos.loading,
+  error: state.cargos.error,
 });
 
 const mapDispatchToProps = (dispatch: Dispatch) =>

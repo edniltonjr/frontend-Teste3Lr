@@ -10,6 +10,6 @@ export default function* rootSaga() {
   return yield all([
     takeLatest(FuncionariosTypes.LOAD_REQUEST, load),
     takeLatest(CargosTypes.LOAD_REQUEST, loadCargos),
-    takeLatest(CargosTypes.CREATE_CARGO, criarCargo),
+    takeLatest(CargosTypes.CREATE_REQUEST, criarCargo),
   ]);
 }

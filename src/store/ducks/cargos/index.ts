@@ -5,6 +5,7 @@ const INITIAL_STATE: CargosState = {
   data: [],
   error: false,
   loading: false,
+  success: false,
 };
 
 const reducer: Reducer<CargosState> = (state = INITIAL_STATE, action) => {
@@ -16,21 +17,39 @@ const reducer: Reducer<CargosState> = (state = INITIAL_STATE, action) => {
         ...state,
         loading: false,
         error: false,
+        success: true,
         data: action.payload.data,
       };
     case CargosTypes.LOAD_FAILURE:
+      const { error } = action.payload;
+      console.log(error, 'LOAD FAILURE');
       return {
         ...state,
         loading: false,
         error: true,
-        data: [],
+        data: action.payload.error,
       };
-
-    case CargosTypes.CREATE_CARGO:
+    case CargosTypes.CREATE_REQUEST:
       return {
         ...state,
         loading: true,
+      };
+
+    case CargosTypes.CREATE_SUCCESS:
+      return {
+        ...state,
+        success: true,
+        loading: false,
         data: action.payload.data,
+      };
+
+    case CargosTypes.CREATE_FAILURE:
+      console.log(action.payload.error, 'ERROR');
+      return {
+        ...state,
+        loading: false,
+        error: true,
+        data: action.payload.error,
       };
 
     default:
